@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package tweet;
+service TweetService {
+ rpc createTweet (TweetCreateInput) returns (Tweet) {}
+rpc tweets (findManyParams) returns (stream Tweet) {}
+rpc tweet (TweetWhereUniqueInput) returns (Tweet) {}
+rpc updateTweet (TweetUpdateInput) returns (Tweet) {}
+rpc deleteTweet (TweetWhereUniqueInput) returns (Tweet) {} 
+ }
+message TweetCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Tweet {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TweetWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TweetUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
