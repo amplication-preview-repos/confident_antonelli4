@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package retweet;
+service RetweetService {
+ rpc createRetweet (RetweetCreateInput) returns (Retweet) {}
+rpc retweets (findManyParams) returns (stream Retweet) {}
+rpc retweet (RetweetWhereUniqueInput) returns (Retweet) {}
+rpc updateRetweet (RetweetUpdateInput) returns (Retweet) {}
+rpc deleteRetweet (RetweetWhereUniqueInput) returns (Retweet) {} 
+ }
+message RetweetCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Retweet {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message RetweetWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message RetweetUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
